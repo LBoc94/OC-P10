@@ -20,7 +20,7 @@ const EventList = () => {
   ).filter((event, index) => {
     if (
       (currentPage - 1) * PER_PAGE <= index &&
-      PER_PAGE * currentPage > index
+      PER_PAGE * currentPage > index && (event.type === type || !type )
     ) {
       return true;
     }
