@@ -30,15 +30,24 @@ describe("When Form is created", () => {
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    render (<Home />);
+    const eventList = screen.getAllByTestId("eventList");
+    expect(eventList).not.toHaveLength(0);
   })
   it("a list a people is displayed", () => {
-    // to implement
+    render (<Home />);
+    const peopleList = screen.getByTestId("peopleList");
+    const peopleCard = peopleList.firstChild
+    expect(peopleCard).toBeInTheDocument();
   })
   it("a footer is displayed", () => {
-    // to implement
+    render(<Home />);
+    const footer = screen.getByTestId("footer");
+    expect(footer).toBeInTheDocument();
   })
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(<Home />);
+    const lastEvent = screen.getByTestId("lastEvent");
+    expect(lastEvent).toBeDefined();
   })
 });
